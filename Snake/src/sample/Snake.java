@@ -1,6 +1,7 @@
 package sample;
 
 import com.sun.javafx.geom.Vec2d;
+import org.w3c.dom.Node;
 
 import java.util.ArrayList;
 import java.util.Vector;
@@ -9,7 +10,7 @@ public class Snake implements ISnake
 {
     int size;
 
-    ArrayList<IMyShape> body;
+    public ArrayList<IMyShape> body;
 
     public ArrayList<Vector2D> directions;
 
@@ -18,7 +19,6 @@ public class Snake implements ISnake
     {
         body = new ArrayList<IMyShape>();
         directions = new ArrayList<Vector2D>();
-
         body.add(new MyShape());
     }
 
@@ -45,10 +45,8 @@ public class Snake implements ISnake
             double x = bodypart.getX();
             double y = bodypart.getY();
 
-
-
-            bodypart.setX(x+direction.x);
-            bodypart.setY(y+direction.y);
+            bodypart.setX(x+direction.x*bodypart.getWidth());
+            bodypart.setY(y+direction.y*bodypart.getHeight());
             count ++;
         }
     }

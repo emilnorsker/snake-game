@@ -1,5 +1,8 @@
 package sample;
 
+
+import javafx.scene.shape.Rectangle;
+
 public interface IMyShape
 {
     public double getX();
@@ -9,6 +12,8 @@ public interface IMyShape
 
     public double getWidth();
     public double getHeight();
+
+    public Rectangle getShape();
 
 
 }

@@ -1,11 +1,22 @@
 package sample;
 
+
+import javafx.scene.shape.Rectangle;
+
 public class MyShape implements IMyShape
 {
     double x;
     double y;
-    double w = 100;
-    double h = 100;
+    double w = 10;
+    double h = 10;
+
+    Rectangle rectangle;
+
+
+    public MyShape()
+    {
+        rectangle = new Rectangle((int)x,(int)y,(int)w,(int)h);
+    }
 
 
     @Override
@@ -39,6 +50,11 @@ public class MyShape implements IMyShape
     @Override
     public double getHeight() {
         return w;
+    }
+
+    @Override
+    public Rectangle getShape() {
+        return rectangle;
     }
 
 }

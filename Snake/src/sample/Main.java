@@ -2,7 +2,9 @@ package sample;
 
 import javafx.application.Application;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 
@@ -49,10 +51,16 @@ public class Main extends Application
                             break;
 
                     }
-
                     updateDirections(snake, direction);
 
                 });
+
+
+        for (IMyShape bodypart:  ((Snake) snake).body)
+        {
+            group.getChildren().add(bodypart.getShape());
+        }
+
 
         Stage stage = new Stage();
         stage.setScene(scene);
