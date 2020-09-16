@@ -19,6 +19,7 @@ public class Snake implements ISnake
     {
         body = new ArrayList<IMyShape>();
         directions = new ArrayList<Vector2D>();
+        directions.add(new Vector2D(0,0));
         body.add(new MyShape(50,50));
     }
 
@@ -45,8 +46,8 @@ public class Snake implements ISnake
                 int x = bodypart.getX();
                 int y = bodypart.getY();
 
-                bodypart.setX(x + direction.x * bodypart.getWidth());
-                bodypart.setY(y + direction.y * bodypart.getHeight());
+                bodypart.setX(x + (direction.x * bodypart.getWidth()));
+                bodypart.setY(y + (direction.y * bodypart.getHeight()));
                 count++;
 
         }

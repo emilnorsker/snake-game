@@ -26,6 +26,9 @@ public class Main extends Application
 
         ISnake snake = new Snake();
 
+
+
+
         scene.setOnKeyPressed
                 (e ->
                 {
@@ -47,6 +50,7 @@ public class Main extends Application
                             direction.y = -1;
                             break;
                         default:
+                            System.out.println("default");
                             if (((Snake) snake).directions.size()>0)
                             direction = ((Snake) snake).directions.get(((Snake) snake).directions.size()-1);
                             break;
@@ -56,8 +60,6 @@ public class Main extends Application
 
                     snake.move();
 
-
-
                 });
 
 
@@ -65,6 +67,8 @@ public class Main extends Application
         {
             group.getChildren().add(bodypart.getShape());
         }
+
+
 
 
 
