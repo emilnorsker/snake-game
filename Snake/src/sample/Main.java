@@ -20,6 +20,7 @@ public class Main extends Application
     @Override
     public void start(Stage primaryStage) throws Exception
     {
+
         Group group = new Group();
         Scene scene = new Scene(group, 500, 500);
 
@@ -28,7 +29,7 @@ public class Main extends Application
         scene.setOnKeyPressed
                 (e ->
                 {
-                    Vector2D direction = new Vector2D(0d,0d);
+                    Vector2D direction = new Vector2D(0,0);
 
                     System.out.println(e.getCode());
                     switch (e.getCode())
@@ -53,6 +54,10 @@ public class Main extends Application
                     }
                     updateDirections(snake, direction);
 
+                    snake.move();
+
+
+
                 });
 
 
@@ -62,9 +67,14 @@ public class Main extends Application
         }
 
 
+
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
+
+
+
+
     }
 
 

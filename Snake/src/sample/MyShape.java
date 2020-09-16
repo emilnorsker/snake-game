@@ -5,50 +5,50 @@ import javafx.scene.shape.Rectangle;
 
 public class MyShape implements IMyShape
 {
-    double x;
-    double y;
-    double w = 10;
-    double h = 10;
+    int x;
+    int y;
+    int w = 10;
+    int h = 10;
 
     Rectangle rectangle;
 
 
-    public MyShape()
+    public MyShape(int x, int y)
     {
-        rectangle = new Rectangle((int)x,(int)y,(int)w,(int)h);
+        rectangle = new Rectangle(x,y,w,h);
     }
 
 
     @Override
-    public double getX() {
+    public int getX() {
         return x;
     }
 
     @Override
-    public double getY() {
+    public int getY() {
         return y;
     }
 
     @Override
-    public void setX(double newX)
+    public void setX(int newX)
     {
         x = newX;
 
     }
 
     @Override
-    public void setY(double newY)
+    public void setY(int newY)
     {
         y = newY;
     }
 
     @Override
-    public double getWidth() {
+    public int getWidth() {
         return h;
     }
 
     @Override
-    public double getHeight() {
+    public int getHeight() {
         return w;
     }
 

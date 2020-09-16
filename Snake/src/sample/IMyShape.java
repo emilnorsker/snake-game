@@ -5,13 +5,13 @@ import javafx.scene.shape.Rectangle;
 
 public interface IMyShape
 {
-    public double getX();
-    public double getY();
-    public void setX(double newX);
-    public void setY(double newY);
+    public int getX();
+    public int getY();
+    public void setX(int newX);
+    public void setY(int newY);
 
-    public double getWidth();
-    public double getHeight();
+    public int getWidth();
+    public int getHeight();
 
     public Rectangle getShape();
 
