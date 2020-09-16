@@ -23,9 +23,6 @@ public class Main extends Application
 
         ISnake snake = new Snake();
 
-
-
-
         scene.setOnKeyPressed
                 (e ->
                 {

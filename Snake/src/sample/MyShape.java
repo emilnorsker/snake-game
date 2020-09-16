@@ -4,6 +4,8 @@ public class MyShape implements IMyShape
 {
     double x;
     double y;
+    double w = 100;
+    double h = 100;
 
 
     @Override
@@ -27,6 +29,16 @@ public class MyShape implements IMyShape
     public void setY(double newY)
     {
         y = newY;
+    }
+
+    @Override
+    public double getWidth() {
+        return h;
+    }
+
+    @Override
+    public double getHeight() {
+        return w;
     }
 
 }

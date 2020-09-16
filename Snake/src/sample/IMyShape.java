@@ -7,4 +7,8 @@ public interface IMyShape
     public void setX(double newX);
     public void setY(double newY);
 
+    public double getWidth();
+    public double getHeight();
+
+
 }
