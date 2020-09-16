@@ -52,9 +52,9 @@ public class Snake implements ISnake
             System.out.println("new x =  "+x + (direction.x * bodypart.getWidth()));
             System.out.println("new y =  "+y + (direction.y * bodypart.getHeight()));
 
-                bodypart.relocate();
+            bodypart.relocate();
 
-                count++;
+            count++;
 
         }
     }

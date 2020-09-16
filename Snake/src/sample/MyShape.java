@@ -15,6 +15,8 @@ public class MyShape implements IMyShape
 
     public MyShape(int x, int y)
     {
+        this.x = x;
+        this.y = y;
         rectangle = new Rectangle(x,y,w,h);
     }
 
