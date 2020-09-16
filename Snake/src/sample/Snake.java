@@ -48,6 +48,8 @@ public class Snake implements ISnake
 
                 bodypart.setX(x + (direction.x * bodypart.getWidth()));
                 bodypart.setY(y + (direction.y * bodypart.getHeight()));
+                bodypart.relocate();
+
                 count++;
 
         }

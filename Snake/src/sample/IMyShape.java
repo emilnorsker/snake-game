@@ -13,6 +13,8 @@ public interface IMyShape
     public int getWidth();
     public int getHeight();
 
+    public void relocate();
+
     public Rectangle getShape();
 
 

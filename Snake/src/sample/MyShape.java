@@ -53,6 +53,12 @@ public class MyShape implements IMyShape
     }
 
     @Override
+    public void relocate()
+    {
+        rectangle.relocate(x,y);
+    }
+
+    @Override
     public Rectangle getShape() {
         return rectangle;
     }

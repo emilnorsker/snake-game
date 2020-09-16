@@ -68,17 +68,9 @@ public class Main extends Application
             group.getChildren().add(bodypart.getShape());
         }
 
-
-
-
-
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
-
-
-
-
     }
 
 
