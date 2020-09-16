@@ -44,10 +44,10 @@ public class Main extends Application
                             direction.x = -1;
                             break;
                         case UP:
-                            direction.y = 1;
+                            direction.y = -1;
                             break;
                         case DOWN:
-                            direction.y = -1;
+                            direction.y = 1;
                             break;
                         default:
                             System.out.println("default");

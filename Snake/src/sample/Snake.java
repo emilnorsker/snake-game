@@ -42,12 +42,16 @@ public class Snake implements ISnake
         for (IMyShape bodypart: body)
         {
 
-                Vector2D direction = directions.get(directions.size() - count);
-                int x = bodypart.getX();
-                int y = bodypart.getY();
+            Vector2D direction = directions.get(directions.size() - count);
+            int x = bodypart.getX();
+            int y = bodypart.getY();
 
-                bodypart.setX(x + (direction.x * bodypart.getWidth()));
-                bodypart.setY(y + (direction.y * bodypart.getHeight()));
+            bodypart.setX(x + (direction.x * bodypart.getWidth()));
+            bodypart.setY(y + (direction.y * bodypart.getHeight()));
+
+            System.out.println("new x =  "+x + (direction.x * bodypart.getWidth()));
+            System.out.println("new y =  "+y + (direction.y * bodypart.getHeight()));
+
                 bodypart.relocate();
 
                 count++;
