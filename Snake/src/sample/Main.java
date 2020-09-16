@@ -1,10 +1,7 @@
 package sample;
 
-import com.sun.javafx.geom.Vec2d;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -34,6 +31,7 @@ public class Main extends Application
                 {
                     Vector2D direction = new Vector2D(0d,0d);
 
+                    System.out.println(e.getCode());
                     switch (e.getCode())
                     {
                         case RIGHT:
