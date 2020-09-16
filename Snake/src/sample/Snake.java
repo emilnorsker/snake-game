@@ -32,6 +32,34 @@ public class Snake implements ISnake
     @Override
     public void onEat()
     {
+        // create new joint in the body
+        int length = body.size()+1;
+
+        MyShape bodypart = new MyShape(0,0);
+
+        Vector2D direction = directions.get(directions.size()-(length)); //direction of last added bodypart
+
+
+
+        int x = body.get(body.size()-(length-1)).getX();
+        int y = body.get(body.size()-(length-1)).getY();
+
+
+        bodypart.setX(x - (direction.x * bodypart.getWidth()));
+        bodypart.setY(y - (direction.y * bodypart.getHeight()));
+
+
+        /*
+        jointPosition.x -= direction.x * newJoint.getWidth();
+        jointPosition.y -= direction.y * newJoint.getHeight();
+
+        newJoint.setX(jointPosition.x);
+        newJoint.setY(jointPosition.y);
+
+        newJoint.relocate();
+*/
+        body.add(bodypart);
+
 
     }
 
@@ -51,11 +79,14 @@ public class Snake implements ISnake
 
             System.out.println("new x =  "+x + (direction.x * bodypart.getWidth()));
             System.out.println("new y =  "+y + (direction.y * bodypart.getHeight()));
+            System.out.println(count);
 
             bodypart.relocate();
 
             count++;
 
         }
+
+        onEat();
     }
 }
