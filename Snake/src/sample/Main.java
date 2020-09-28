@@ -17,14 +17,18 @@ import javafx.stage.Stage;
 public class Main extends Application
 {
 
+
+    public static Group group;
+    public static Vector2D inputDirection;
+
     @Override
     public void start(Stage primaryStage) throws Exception
     {
 
-        Group group = new Group();
+        group = new Group();
         Scene scene = new Scene(group, 500, 500);
 
-        ISnake snake = new Snake();
+        Snake snake = new Snake();
 
 
 
@@ -33,54 +37,54 @@ public class Main extends Application
                 (e ->
                 {
                     Vector2D direction = new Vector2D(0,0);
+                    Vector2D lastDirection = new Vector2D(0, 0);
+                    lastDirection = snake.directions.get(snake.directions.size()-1);
 
                     System.out.println(e.getCode());
                     switch (e.getCode())
                     {
                         case RIGHT:
                             direction.x =1;
+                            if (lastDirection.x == -1)
+                                direction = lastDirection;
                             break;
                         case LEFT:
                             direction.x = -1;
+                            if (lastDirection.x == 1)
+                                direction = lastDirection;
                             break;
                         case UP:
                             direction.y = -1;
+                            if (lastDirection.y == 1)
+                                direction = lastDirection;
                             break;
                         case DOWN:
                             direction.y = 1;
+                            if (lastDirection.y == -1)
+                                direction = lastDirection;
                             break;
-                        default:
-                            System.out.println("default");
-                            if (((Snake) snake).directions.size()>0)
-                            direction = ((Snake) snake).directions.get(((Snake) snake).directions.size()-1);
+                        default: // if no input or wrong input, continue with last correct input.
+                            if (snake.directions.size()>0)
+                                direction = lastDirection;
+                            else
+                                direction = new Vector2D(1,0);
                             break;
-
                     }
-                    updateDirections(snake, direction);
-
-                    snake.move();
-
-                });
-
-
-        for (IMyShape bodypart:  ((Snake) snake).body)
-        {
-            group.getChildren().add(bodypart.getShape());
-        }
+        });
 
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
+
+        Thread run= new Thread(new Runner(snake));
+        run.start();
+
     }
 
-
-    public void updateDirections(ISnake snake, Vector2D direction)
-    {
-        ((Snake) snake).directions.add(direction);
-    }
 
 
     public static void main(String[] args)
+
     {
         launch(args);
     }
